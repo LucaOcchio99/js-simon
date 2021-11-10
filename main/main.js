@@ -26,16 +26,16 @@ setTimeout(() => {
 }, 3000);
 
 setTimeout(() => {
+    number_pagina.innerHTML = '';
     /*l’utente deve inserire, uno alla volta, i numeri che ha visto
      precedentemente, tramite il prompt()*/
     for (let i = 0; i < 5; i++) {
         const numeri_ricordati = parseInt(prompt('Inserisci un numero che ti ricordi'));
+        console.log(numeri_ricordati)
     }
 }, 3000);
 
-
-
-
- /*Dopo che sono stati inseriti i 5 numeri, il software dice 
+/*Dopo che sono stati inseriti i 5 numeri, il software dice 
 quanti e quali dei numeri da indovinare sono stati individuati.*/
 
+if ()
