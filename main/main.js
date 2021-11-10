@@ -22,15 +22,19 @@ number_pagina.innerHTML += `<p>${gen_num}</p>`;
 
 //Dopo 30 secondi i numeri in pagina devono essere rimossi
 setTimeout(() => {
-    number_pagina.innerHTML = '';
+    number_pagina.innerHTML = ''; 
 }, 3000);
 
-/*l’utente deve inserire, uno alla volta, i numeri che ha visto
- precedentemente, tramite il prompt()*/
+setTimeout(() => {
+    /*l’utente deve inserire, uno alla volta, i numeri che ha visto
+     precedentemente, tramite il prompt()*/
+    for (let i = 0; i < 5; i++) {
+        const numeri_ricordati = parseInt(prompt('Inserisci un numero che ti ricordi'));
+    }
+}, 3000);
 
- for (let i = 0; i < 5; i++) {
-     const numeri_ricordati = parseInt(prompt('Inserisci un numero che ti ricordi'));
- }
+
+
 
  /*Dopo che sono stati inseriti i 5 numeri, il software dice 
 quanti e quali dei numeri da indovinare sono stati individuati.*/
