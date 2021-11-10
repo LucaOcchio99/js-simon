@@ -12,8 +12,11 @@ const number_pagina = document.querySelector('.numeri_casuali');
 console.log(number_pagina);
 
 //Visualizzare in pagina 5 numeri casuali
+const array_num_gene = [];
+console.log(array_num_gene)
 for (let i = 0; i < 5; i++) {
 const gen_num = Math.round(Math.random()*20)+1; 
+array_num_gene.push(gen_num);
 number_pagina.innerHTML += `<p>${gen_num}</p>`;
 }
 
@@ -22,4 +25,13 @@ setTimeout(() => {
     number_pagina.innerHTML = '';
 }, 3000);
 
+/*l’utente deve inserire, uno alla volta, i numeri che ha visto
+ precedentemente, tramite il prompt()*/
+
+ for (let i = 0; i < 5; i++) {
+     const numeri_ricordati = parseInt(prompt('Inserisci un numero che ti ricordi'));
+ }
+
+ /*Dopo che sono stati inseriti i 5 numeri, il software dice 
+quanti e quali dei numeri da indovinare sono stati individuati.*/
 
