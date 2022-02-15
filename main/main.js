@@ -4,38 +4,44 @@ Dopo 30 secondi i numeri in pagina devono essere rimossi e
 l’utente deve inserire, uno alla volta, i numeri che ha visto
  precedentemente, tramite il prompt().
 Dopo che sono stati inseriti i 5 numeri, il software dice 
-quanti e quali dei numeri da indovinare sono stati individuati.*/
+quanti e quali dei numeri da indovinare sono stati individuati.
+*/
+
+ 
+const numeri_pagina = document.querySelector('.numeri_casuali')
+
+const numeri = genNumRandom(1, 100);
+console.log(numeri);
+
+numeri_pagina.innerHTML = `<p> ${numeri} </p>` 
+
+setTimeout(function() {
+       numeri_pagina.innerHTML = '';
+},3000);
+
+numeri_visti(numeri.length);
 
 
-//REFERENZE
-const number_pagina = document.querySelector('.numeri_casuali');
-console.log(number_pagina);
 
-//Visualizzare in pagina 5 numeri casuali
-const array_num_gene = [];
-console.log(array_num_gene)
-for (let i = 0; i < 5; i++) {
-const gen_num = Math.round(Math.random()*20)+1; 
-array_num_gene.push(gen_num);
-number_pagina.innerHTML += `<p>${gen_num}</p>`;
+
+
+function numeri_visti(lunghezza_numeri) {
+    const array_utente = [];
+    for (let i = 0; i < lunghezza_numeri; i++) {
+        const numeri_visti = parseInt(prompt('Quali numeri hai visto?'));
+        array_utente.push(numeri_visti);
+    }
+    return array_utente;
 }
 
-//Dopo 30 secondi i numeri in pagina devono essere rimossi
-setTimeout(() => {
-    number_pagina.innerHTML = ''; 
-}, 3000);
 
-setTimeout(() => {
-    number_pagina.innerHTML = '';
-    /*l’utente deve inserire, uno alla volta, i numeri che ha visto
-     precedentemente, tramite il prompt()*/
-    for (let i = 0; i < 5; i++) {
-        const numeri_ricordati = parseInt(prompt('Inserisci un numero che ti ricordi'));
-        console.log(numeri_ricordati)
+
+
+function genNumRandom(min, max) {
+    let numeri_generati = [];
+    for(let i = 0;  i < 5; i++) {
+     const numeri_random =  Math.round(Math.random()*max)+min;
+     numeri_generati.push(numeri_random);
     }
-}, 3000);
-
-/*Dopo che sono stati inseriti i 5 numeri, il software dice 
-quanti e quali dei numeri da indovinare sono stati individuati.*/
-
-if ()
+    return numeri_generati;
+}
